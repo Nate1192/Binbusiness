@@ -179,6 +179,53 @@ var o_options = {
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+<script>
+const basePrice = 28.00;
+const additionalCanPrice = 7.00;
 
+const canInput = document.getElementById("canCount");
+const priceDisplay = document.getElementById("priceDisplay");
+const startBtn = document.getElementById("startSubscription");
+
+function calculatePrice() {
+  let cans = parseInt(canInput.value);
+
+  if (isNaN(cans) || cans < 1) {
+    cans = 1;
+    canInput.value = 1;
+  }
+
+  let total = basePrice + ((cans - 1) * additionalCanPrice);
+  priceDisplay.innerText = "$" + total.toFixed(2) + " / month";
+
+  return cans;
+}
+
+canInput.addEventListener("input", calculatePrice);
+
+startBtn.addEventListener("click", function (e) {
+  e.preventDefault();
+
+  if (!window.Outseta) {
+    alert("System loading. Please try again.");
+    return;
+  }
+
+  const cans = calculatePrice();
+  const additionalCans = Math.max(0, cans - 1);
+
+  Outseta.open({
+    planUid: "YOUR_PLAN_UID",
+    addOns: additionalCans > 0 ? [
+      {
+        uid: "YOUR_ADDON_UID",
+        quantity: additionalCans
+      }
+    ] : []
+  });
+});
+
+calculatePrice();
+</script>
 </body>
 </html>
