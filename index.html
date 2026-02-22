@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bin Business</title>
+  <meta name="description" content="Bin Business – Reliable, subscription-based trash can and bin services." />
+
+  <!-- Outseta Script -->
+  <!-- Replace DOMAIN with your Outseta subdomain -->
+  <script src="https://binbusiness.outseta.com/outseta.min.js"
+          data-options='{"domain":"binbusiness","load":"auth,profile,subscription"}'
+          async defer></script>
+<script>
+var o_options = {
+    domain: 'binbusiness.outseta.com',
+    load: 'auth,customForm,emailList,leadCapture,nocode,profile,support'
+};
+</script>
+<script src="https://cdn.outseta.com/outseta.min.js"
+        data-options="o_options">
+</script>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f6f6f6;
+      color: #222;
+    }
+    header {
+      background: #111;
+      color: #fff;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.6rem;
+      letter-spacing: 0.5px;
+    }
+    header nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: 600;
+    }
+    .hero {
+      padding: 90px 40px;
+      text-align: center;
+      background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+                  url('https://images.unsplash.com/photo-1604187351574-c75ca79f5807?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+    }
+    .hero h2 {
+      font-size: 2.7rem;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      max-width: 720px;
+      margin: 0 auto 35px;
+      font-size: 1.15rem;
+      line-height: 1.6;
+    }
+    .cta-buttons a {
+      display: inline-block;
+      margin: 10px;
+      padding: 15px 30px;
+      background: #111;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+    .cta-buttons a.secondary {
+      background: #555;
+    }
+    .section {
+      padding: 70px 40px;
+      background: #fff;
+      text-align: center;
+    }
+    .section.gray {
+      background: #f0f0f0;
+    }
+    .section h3 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    .features {
+      max-width: 1000px;
+      margin: 40px auto 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+    .feature {
+      background: #fff;
+      padding: 30px;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    .feature h4 {
+      margin-top: 0;
+    }
+    footer {
+      text-align: center;
+      padding: 35px;
+      font-size: 0.9rem;
+      color: #666;
+      background: #fafafa;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Bin Business</h1>
+    <nav>
+      <a href="#" onclick="Outseta.auth.open({ widgetMode: 'register' }); return false;">Sign Up</a>
+      <a href="#" onclick="Outseta.auth.open({ widgetMode: 'login' }); return false;">Login</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Your Bin is our Business.</h2>
+    <p>
+      Bin Business offers professional trash bin services through a simple monthly
+      subscription. We handle the dirty, heavy work so you don’t have to.
+    </p>
+    <div class="cta-buttons">
+      <a href="#" onclick="Outseta.auth.open({ widgetMode: 'register' }); return false;">Start My Subscription</a>
+      <a href="#" class="secondary" onclick="Outseta.auth.open({ widgetMode: 'login' }); return false;">Manage My Account</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <h3>How It Works</h3>
+    <p>Simple, predictable service with no long-term contracts.</p>
+    <div class="features">
+      <div class="feature">
+        <h4>1. Sign Up</h4>
+        <p>Create an account and choose your subscription plan in minutes.</p>
+      </div>
+      <div class="feature">
+        <h4>2. We Take Care of Your Bins</h4>
+        <p>We move your bin the the curb for disposal every week.</p>
+      </div>
+      <div class="feature">
+        <h4>3. Manage Anytime</h4>
+        <p>Login to pause, change, or cancel your subscription whenever you need.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section gray">
+    <h3>Why Bin Business</h3>
+    <div class="features">
+      <div class="feature">
+        <h4>Subscription-Based</h4>
+        <p>No surprises. One simple recurring payment.</p>
+      </div>
+      <div class="feature">
+        <h4>Professional & Reliable</h4>
+        <p>Consistent service you can count on.</p>
+      </div>
+      <div class="feature">
+        <h4>Cancel Anytime</h4>
+        <p>Full control through your customer dashboard.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © <span id="year"></span> Bin Business. All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
