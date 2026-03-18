@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Up – Bin Business</title>
+
+  <script>
+    var o_options = {
+      domain: 'binbusiness.outseta.com',
+      load: 'auth'
+    };
+  </script>
+  <script src="https://cdn.outseta.com/outseta.min.js" data-options="o_options"></script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+    .box {
+      max-width: 400px;
+    }
+    h1 {
+      margin-bottom: 10px;
+    }
+    p {
+      margin-bottom: 25px;
+      color: #ccc;
+    }
+    button {
+      padding: 15px 25px;
+      font-size: 1rem;
+      border: none;
+      background: #fff;
+      color: #111;
+      cursor: pointer;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <h1>Start Your Service</h1>
+    <p>Set up your bin service in under 2 minutes.</p>
+    <button onclick="Outseta.auth.open({ widgetMode: 'register' })">
+      Start My Subscription
+    </button>
+  </div>
+
+  <script>
+    // AUTO OPEN (critical for QR codes)
+    window.addEventListener("load", function () {
+      setTimeout(function () {
+        Outseta.auth.open({ widgetMode: 'register' });
+      }, 500);
+    });
+  </script>
+
+</body>
+</html>
