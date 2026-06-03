@@ -3,67 +3,324 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sign Up – Bin Business</title>
+  <title>Bin Business – Start Service</title>
 
   <script>
     var o_options = {
       domain: 'binbusiness.outseta.com',
-      load: 'auth'
+      load: 'auth,profile,subscription'
     };
   </script>
   <script src="https://cdn.outseta.com/outseta.min.js" data-options="o_options"></script>
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #111;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
+      background: #eef8f4;
+      color: #10231c;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #063b73, #087f5b);
+      color: white;
+      padding: 42px 18px 28px;
       text-align: center;
     }
-    .box {
-      max-width: 400px;
+
+    .badge {
+      display: inline-block;
+      background: #d9fff0;
+      color: #064b3a;
+      padding: 8px 15px;
+      border-radius: 999px;
+      font-weight: 900;
+      font-size: 14px;
+      margin-bottom: 16px;
     }
+
     h1 {
-      margin-bottom: 10px;
+      font-size: 39px;
+      line-height: 1.05;
+      margin: 0 auto 14px;
+      max-width: 720px;
     }
-    p {
-      margin-bottom: 25px;
-      color: #ccc;
+
+    .subhead {
+      font-size: 18px;
+      max-width: 640px;
+      margin: 0 auto 20px;
+      color: #e4f7ff;
     }
-    button {
-      padding: 15px 25px;
-      font-size: 1rem;
+
+    .price-strip {
+      background: white;
+      color: #063b73;
+      max-width: 520px;
+      margin: 0 auto;
+      border-radius: 18px;
+      padding: 15px;
+      font-weight: 900;
+      box-shadow: 0 10px 28px rgba(0,0,0,.18);
+    }
+
+    .price {
+      font-size: 42px;
+      line-height: 1;
+    }
+
+    .price span {
+      font-size: 16px;
+      color: #5d6d67;
+      font-weight: 500;
+    }
+
+    .main {
+      max-width: 560px;
+      margin: -6px auto 34px;
+      padding: 0 18px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 24px;
+      padding: 24px 20px;
+      box-shadow: 0 14px 38px rgba(0,0,0,.13);
+      text-align: center;
+      margin-top: 22px;
+    }
+
+    .cta {
+      width: 100%;
+      background: linear-gradient(135deg, #087f5b, #0b72b9);
+      color: white;
       border: none;
-      background: #fff;
-      color: #111;
+      border-radius: 14px;
+      padding: 18px 20px;
+      font-size: 20px;
+      font-weight: 900;
       cursor: pointer;
-      border-radius: 4px;
-      font-weight: bold;
+      margin: 16px 0 10px;
+    }
+
+    .cta:hover {
+      opacity: .94;
+    }
+
+    .small {
+      color: #64746d;
+      font-size: 14px;
+      margin: 0;
+    }
+
+    .urgency {
+      background: #e7f7ff;
+      border: 1px solid #bce6ff;
+      color: #064263;
+      padding: 14px;
+      border-radius: 14px;
+      margin: 18px 0;
+      font-weight: 900;
+      line-height: 1.35;
+    }
+
+    .features,
+    .audience,
+    .faq {
+      text-align: left;
+      margin-top: 22px;
+    }
+
+    .feature {
+      display: flex;
+      gap: 10px;
+      margin: 13px 0;
+      font-size: 16px;
+      line-height: 1.35;
+    }
+
+    .check {
+      color: #087f5b;
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 25px;
+      color: #063b73;
+    }
+
+    .section {
+      background: #f7fffb;
+      border: 1px solid #d6eee4;
+      border-radius: 18px;
+      padding: 18px;
+      margin-top: 18px;
+    }
+
+    .faq-item {
+      border-top: 1px solid #d6eee4;
+      padding: 13px 0;
+    }
+
+    .faq-item:first-child {
+      border-top: none;
+    }
+
+    .faq-item strong {
+      display: block;
+      color: #063b73;
+      margin-bottom: 5px;
+    }
+
+    .guarantee {
+      background: #e9fff4;
+      border: 1px solid #bcebd4;
+      padding: 16px;
+      border-radius: 16px;
+      margin-top: 18px;
+      text-align: center;
+    }
+
+    .sticky-cta {
+      position: sticky;
+      bottom: 0;
+      background: white;
+      padding: 12px 16px;
+      box-shadow: 0 -6px 18px rgba(0,0,0,.12);
+      z-index: 10;
+    }
+
+    .sticky-cta .cta {
+      margin: 0;
+      max-width: 520px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @media (max-width: 700px) {
+      h1 {
+        font-size: 33px;
+      }
+
+      .hero {
+        padding-top: 34px;
+      }
+
+      .price {
+        font-size: 38px;
+      }
     }
   </style>
 </head>
+
 <body>
 
-  <div class="box">
-    <h1>Start Your Service</h1>
-    <p>Set up your bin service in under 2 minutes.</p>
-    <button onclick="Outseta.auth.open({ widgetMode: 'register' })">
-      Start My Subscription
-    </button>
+  <section class="hero">
+    <div class="badge">First Week Free</div>
+
+    <h1>We’ll Handle Trash Day For You.</h1>
+
+    <p class="subhead">
+      We move your trash bin to the curb before pickup and bring it back after the garbage truck stops.
+    </p>
+
+    <div class="price-strip">
+      <div class="price">$28 <span>/ month</span></div>
+      <div>First Week Free • No Contracts • Cancel Anytime</div>
+    </div>
+  </section>
+
+  <main class="main">
+
+    <section class="card">
+      <h2>Start Your Service Today</h2>
+
+      <button class="cta" onclick="openSignup()">Claim My First Free Week</button>
+      <p class="small">Signup takes less than 2 minutes.</p>
+
+      <div class="urgency">
+        Route spots are limited so we can keep service dependable. Reserve your spot before your route fills up.
+      </div>
+
+      <div class="features">
+        <div class="feature"><span class="check">✓</span><span>We move your bin from your home to the curb</span></div>
+        <div class="feature"><span class="check">✓</span><span>After the garbage truck stops, we return it to your home</span></div>
+        <div class="feature"><span class="check">✓</span><span>No more missed pickup days</span></div>
+        <div class="feature"><span class="check">✓</span><span>No more bins sitting by the road all day</span></div>
+        <div class="feature"><span class="check">✓</span><span>No more dragging heavy trash cans in bad weather</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Perfect For</h2>
+
+      <div class="audience">
+        <div class="feature"><span class="check">✓</span><span>Busy families</span></div>
+        <div class="feature"><span class="check">✓</span><span>Working professionals</span></div>
+        <div class="feature"><span class="check">✓</span><span>Elderly homeowners</span></div>
+        <div class="feature"><span class="check">✓</span><span>Adult children helping aging parents</span></div>
+        <div class="feature"><span class="check">✓</span><span>Frequent travelers</span></div>
+        <div class="feature"><span class="check">✓</span><span>Rental homes and property owners</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Common Questions</h2>
+
+      <div class="faq">
+        <div class="faq-item">
+          <strong>Do I need to be home?</strong>
+          No. We handle the bin service whether you are home or away.
+        </div>
+
+        <div class="faq-item">
+          <strong>Can I cancel?</strong>
+          Yes. There are no contracts. Cancel anytime.
+        </div>
+
+        <div class="faq-item">
+          <strong>How much does it cost?</strong>
+          Service is $28 per month after your first free week.
+        </div>
+
+        <div class="faq-item">
+          <strong>When does service start?</strong>
+          After signup, we confirm your address and pickup details.
+        </div>
+      </div>
+    </section>
+
+    <section class="guarantee">
+      <h2>Try It Risk-Free</h2>
+      <p>
+        Your first week is free. If you do not love the convenience, you can cancel anytime.
+      </p>
+
+      <button class="cta" onclick="openSignup()">Reserve My Spot</button>
+      <p class="small">First week free • $28/month after that</p>
+    </section>
+
+  </main>
+
+  <div class="sticky-cta">
+    <button class="cta" onclick="openSignup()">Claim My First Free Week</button>
   </div>
 
   <script>
-    // AUTO OPEN (critical for QR codes)
-    window.addEventListener("load", function () {
-      setTimeout(function () {
+    function openSignup() {
+      if (window.Outseta && Outseta.auth) {
         Outseta.auth.open({ widgetMode: 'register' });
-      }, 500);
-    });
+      } else {
+        setTimeout(openSignup, 250);
+      }
+    }
   </script>
 
 </body>
