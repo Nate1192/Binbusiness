@@ -5,14 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Bin Business – Start Service</title>
 
-  <script>
-    var o_options = {
-      domain: 'binbusiness.outseta.com',
-      load: 'auth,profile,subscription'
-    };
-  </script>
-  <script src="https://cdn.outseta.com/outseta.min.js" data-options="o_options"></script>
-
   <style>
     * {
       box-sizing: border-box;
@@ -96,9 +88,11 @@
 
     .cta {
       width: 100%;
+      display: block;
+      text-align: center;
+      text-decoration: none;
       background: linear-gradient(135deg, #087f5b, #0b72b9);
       color: white;
-      border: none;
       border-radius: 14px;
       padding: 18px 20px;
       font-size: 20px;
@@ -197,11 +191,8 @@
     }
 
     .sticky-cta .cta {
-      margin: 0;
+      margin: 0 auto;
       max-width: 520px;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
     }
 
     @media (max-width: 700px) {
@@ -242,7 +233,10 @@
     <section class="card">
       <h2>Start Your Service Today</h2>
 
-      <button class="cta" onclick="openSignup()">Claim My First Free Week</button>
+      <a class="cta" href="https://binbusiness.outseta.com/auth?widgetMode=register">
+        Claim My First Free Week
+      </a>
+
       <p class="small">Signup takes less than 2 minutes.</p>
 
       <div class="urgency">
@@ -299,29 +293,25 @@
 
     <section class="guarantee">
       <h2>Try It Risk-Free</h2>
+
       <p>
         Your first week is free. If you do not love the convenience, you can cancel anytime.
       </p>
 
-      <button class="cta" onclick="openSignup()">Reserve My Spot</button>
+      <a class="cta" href="https://binbusiness.outseta.com/auth?widgetMode=register">
+        Reserve My Spot
+      </a>
+
       <p class="small">First week free • $28/month after that</p>
     </section>
 
   </main>
 
   <div class="sticky-cta">
-    <button class="cta" onclick="openSignup()">Claim My First Free Week</button>
+    <a class="cta" href="https://binbusiness.outseta.com/auth?widgetMode=register">
+      Claim My First Free Week
+    </a>
   </div>
-
-  <script>
-    function openSignup() {
-      if (window.Outseta && Outseta.auth) {
-        Outseta.auth.open({ widgetMode: 'register' });
-      } else {
-        setTimeout(openSignup, 250);
-      }
-    }
-  </script>
 
 </body>
 </html>
